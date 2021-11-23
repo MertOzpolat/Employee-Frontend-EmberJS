@@ -1,0 +1,8 @@
+{{page-title "Employee"}}
+{{outlet}}
+<h1>Edit Employee {{this.model.name}}</h1>
+{{input type="name" value=this.model.name}}
+{{input type="surname" value=this.model.surname}}
+{{input type="email" value=this.model.email}}
+{{input type="salary" value=this.model.salary}}
+<button type="button" {{on 'click' (fn this.editButtonClicked @this.model)}}>edit action</button>

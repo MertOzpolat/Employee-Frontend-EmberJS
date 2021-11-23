@@ -1,0 +1,29 @@
+<h1>{{this.model.name}} Details</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Edit Action</th>
+            <th scope="col">Delete Action</th>
+        </tr>
+  </thead>
+  <tbody>
+        {{#each this.model.employees as |employee| }}
+            <EmployeeRow @employee={{employee}} @deleteButtonClicked= {{this.deleteButtonClicked}} @editButtonClicked ={{this.editButtonClicked}}/>
+        {{/each}}
+  </tbody>
+  
+</table>
+<h1>Add Employee</h1>
+<label>name</label>
+{{input type="name" value=name}}
+<label>surname</label>
+{{input type="surname" value=surname}}
+<label>email</label>
+{{input type="email" value=email}}
+<label>salary</label>
+{{input type="salary" value=salary}}
+<button type="button" {{on 'click' (fn this.addButtonClicked @this.kek)}}>add employee</button>

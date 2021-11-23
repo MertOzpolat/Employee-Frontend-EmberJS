@@ -1,0 +1,8 @@
+<tr>
+    <td>{{@employee.name}}</td>
+    <td>{{@employee.surname}}</td>
+    <td>{{@employee.email}}</td>
+    <td>{{@employee.salary}}</td>
+    <td><button type="button" {{on 'click' (fn @editButtonClicked @employee.id)}}>edit action</button></td>
+    <td><button type="button" {{on 'click' (fn @deleteButtonClicked @employee.id)}}>Delete Action</button></td>
+</tr>

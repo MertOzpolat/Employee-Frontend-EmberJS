@@ -1,0 +1,6 @@
+<tr>
+    <td>{{@company.name}}</td>
+    <td><button type="button" {{on 'click' (fn @showButtonClicked @company.id)}}>Show Company Details</button></td>
+    <td><button type="button" {{on 'click' (fn @editButtonClicked @company.id)}}>Edit Company</button></td>
+    <td><button type="button" {{on 'click' (fn @deleteButtonClicked @company.id)}}>Delete Company</button></td>
+</tr>

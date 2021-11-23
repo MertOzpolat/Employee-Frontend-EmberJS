@@ -1,0 +1,25 @@
+{{page-title "Companies"}}
+<h1>Avarage Salary lazım!!!!</h1>
+<h1>this.kek diye ara eğer lazım değilse sil!!!</h1>
+<h1>Companies</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Company Name</th>
+            <th scope="col">Show Detail Action</th>
+            <th scope="col">Edit Action</th>
+            <th scope="col">Delete Action</th>
+        </tr>
+  </thead>
+  <tbody>
+        {{#each this.model.content as |company| }}
+            <CompanyRow @company={{company}} @showButtonClicked ={{this.showButtonClicked}} @deleteButtonClicked= {{this.deleteButtonClicked}} @editButtonClicked={{this.editButtonClicked}}/>
+        {{/each}}
+  </tbody>
+  
+</table>
+<h1>Add New Company</h1>
+<label>name</label>
+{{input type="name" value=name}}
+<button type="button" {{on 'click' (fn this.addButtonClicked @this.kek)}}>add company</button>
+{{outlet}}

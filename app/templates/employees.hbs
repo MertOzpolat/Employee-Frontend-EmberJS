@@ -1,0 +1,22 @@
+{{page-title "Companies"}}
+<h1>Employees</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Edit Action</th>
+            <th scope="col">Delete Action</th>
+        </tr>
+  </thead>
+  <tbody>
+        {{#each this.model.content as |employee| }}
+            <EmployeeRow @employee={{employee}} @deleteButtonClicked= {{this.deleteButtonClicked}} @editButtonClicked ={{this.editButtonClicked}}/>
+        {{/each}}
+  </tbody>
+  
+</table>
+
+{{outlet}}
