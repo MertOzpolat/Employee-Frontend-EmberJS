@@ -9,6 +9,10 @@ export default class EmployeeController extends Controller {
   async editButtonClicked(employee) {
     await this.employeeApi
       .updateEmployee(employee)
-      .then(this.router.transitionTo('/employees'));
+      .then(
+        this.router
+          .transitionTo(`/company-details/${employee.company.id}`)
+          .then((route) => route.refresh())
+      );
   }
 }

@@ -5,11 +5,14 @@ import { action } from '@ember/object';
 export default class CompanyDetailsRoute extends Route {
   @service('companyApi') companyApi;
 
-  model(params) {
-    
+  async model(params) {
+    var res = await Promise.all([
+      this.companyApi.getCompanyById(params.companyId),
+      this.companyApi.getAverageSalary(params.companyId),
+    ]);
     return {
-      company:this.companyApi.getCompanyById(params.companyId),
-      avarageSalary:this.companyApi.getCompanyById(params.companyId)
+      company: res[0],
+      avarageSalary: res[1],
     };
   }
 

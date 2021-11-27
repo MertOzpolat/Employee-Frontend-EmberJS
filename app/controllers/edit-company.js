@@ -10,6 +10,8 @@ export default class EmployeeController extends Controller {
     company.employees = [];
     await this.companyApi
       .updateCompany(company)
-      .then(this.router.transitionTo('/companies'));
+      .then(
+        this.router.transitionTo('/companies').then((route) => route.refresh())
+      );
   }
 }

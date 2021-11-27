@@ -1,6 +1,4 @@
 {{page-title "Companies"}}
-<h1>Avarage Salary lazım!!!!</h1>
-<h1>this.kek diye ara eğer lazım değilse sil!!!</h1>
 <h1>Companies</h1>
 <table class="table">
     <thead class="thead-dark">
@@ -21,5 +19,5 @@
 <h1>Add New Company</h1>
 <label>name</label>
 {{input type="name" value=name}}
-<button type="button" {{on 'click' (fn this.addButtonClicked @this.kek)}}>add company</button>
+<button type="button" id='addButton' {{on 'click' (fn this.addButtonClicked this)}}>add company</button>
 {{outlet}}

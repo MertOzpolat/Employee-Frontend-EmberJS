@@ -15,10 +15,10 @@ export default class CompanyDetailsController extends Controller {
     this.send('refreshModel');
   }
   @action
-  async addButtonClicked(employee) {
+  async addButtonClicked() {
     const companyToGo = {
-      id: this.model.id,
-      name: this.model.name,
+      id: this.model.company.id,
+      name: this.model.company.name,
     };
     const employeeToGo = {
       name: this.name,

@@ -12,5 +12,5 @@ Router.map(function () {
   this.route('employees');
   this.route('employee', { path: '/employee/:employeeId' });
   this.route('companies');
-  this.route('edit-company',{ path: '/edit-company/:companyId' });
+  this.route('edit-company', { path: '/edit-company/:companyId' });
 });

@@ -1,4 +1,4 @@
-<h1>{{this.model.name}} Details</h1>
+<h1>{{this.model.company.name}} Details</h1>
 <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -11,12 +11,13 @@
         </tr>
   </thead>
   <tbody>
-        {{#each this.model.employees as |employee| }}
+        {{#each this.model.company.employees as |employee| }}
             <EmployeeRow @employee={{employee}} @deleteButtonClicked= {{this.deleteButtonClicked}} @editButtonClicked ={{this.editButtonClicked}}/>
         {{/each}}
   </tbody>
   
 </table>
+<h1>Avarage Salary {{this.model.avarageSalary}}</h1>
 <h1>Add Employee</h1>
 <label>name</label>
 {{input type="name" value=name}}
@@ -26,4 +27,4 @@
 {{input type="email" value=email}}
 <label>salary</label>
 {{input type="salary" value=salary}}
-<button type="button" {{on 'click' (fn this.addButtonClicked @this.kek)}}>add employee</button>
+<button type="button" {{on 'click' this.addButtonClicked}}>add employee</button>
